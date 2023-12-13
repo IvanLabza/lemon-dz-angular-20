@@ -1,0 +1,49 @@
+<div class="form-wrapper">
+  <h1 class="form-title">Login</h1>
+  <p class="form-text">
+    Sign in with your data that you entered during your registration.
+  </p>
+  <form class="form" (ngSubmit)="login()">
+    <label class="form-label">
+      Email
+      <input
+        class="form-mail input"
+        placeholder="debra.holt@example.com"
+        type="text"
+        [(ngModel)]="login"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </label>
+    <label class="form-label">
+      Password
+      <input
+        type="{{ showPassword ? 'text' : 'password' }}"
+        [(ngModel)]="password"
+        [(ngModel)]="passwor"
+        class="form-pass input"
+        placeholder="••••••••"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <img
+        (click)="togglePassword()"
+        width="24"
+        height="24"
+        src="./assets/hideIcon.svg"
+        alt=""
+      />
+    </label>
+    <div class="wrapper">
+      <label class="form-label checkbox">
+        <input type="checkbox" class="form-check" />
+        Remember me
+      </label>
+    </div>
+    <button type="submit" (click)="login()" class="form-submit">Sign in</button>
+    <a href="#" class="form-log">
+      <span>Forgot password</span>
+    </a>
+  </form>
+  <a href="#" class="form-register"
+    >Don’t have an account? <span>Sign up</span></a
+  >
+</div>
