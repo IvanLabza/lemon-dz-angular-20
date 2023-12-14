@@ -14,14 +14,13 @@ export class LoginComponent {
     this.inputValue = '';
   }
 
-  passwor: string = '';
+  password: string = '';
   showPassword: boolean = false;
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
   router: any;
-  password: any;
   loginForm: any;
   authService: any;
 
@@ -38,5 +37,8 @@ export class LoginComponent {
     } else {
     }
   }
+ 
 }
+
+
 

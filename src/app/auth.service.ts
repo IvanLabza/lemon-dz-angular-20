@@ -20,5 +20,15 @@ export class AuthService {
   isLoggedIn(): boolean {
     return localStorage.getItem('loggedIn') === 'true';
   }
+  private validUsername = 'admin';
+  private validPassword = 'admin';
+
+  constructor() {}
+
+  checkCredentials(username: string, password: string): boolean {
+    return username === this.validUsername && password === this.validPassword;
+  }
 }
+
+
 
