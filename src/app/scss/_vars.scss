@@ -1,0 +1,15 @@
+:root {
+  --ff: "Nunito", sans-serif;
+  --black: #000;
+  --gray: #83859c;
+  --c-border: #d0d5dd;
+
+  --primary-color: #2b2b43;
+
+  //adaptive width
+
+  $desktop-small: 1200px;
+  $tablet: 992px;
+  $tablet-small: 768px;
+  $mobile: 576px;
+}

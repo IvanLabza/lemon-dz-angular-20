@@ -1,0 +1,258 @@
+<div class="wrapper">
+  <header class="header">
+    <div class="header__content">
+      <a href="/" class="header__logo">
+        <img src="assets/main.png" alt="logo" />
+      </a>
+      <div class="header__search">
+        <input type="search" placeholder="Search" />
+        <span class="material-icons icon_search">search</span>
+      </div>
+    </div>
+
+    <div class="header-menu">
+      <ul class="header-menu__ul">
+        <li class="header-menu__li">
+          <a href="/" class="header-menu__link">Restaurants</a>
+        </li>
+        <li class="header-menu__li">
+          <a href="/" class="header-menu__link">Deals</a>
+        </li>
+        <span></span>
+        <li class="header-menu__li">
+          <a href="/" class="header-menu__link">My orders</a>
+        </li>
+      </ul>
+      <a href="/" class="header-menu__cart">
+        <img src="assets/icon/added.svg" alt="cart"/>
+      </a>
+      
+      <a class="header-menu__avatar" href="/"
+        ><img src="assets/icon/avatar.png" alt="avatar"
+      /></a>
+      <span class="mobile"></span>
+      <span class="header__backdrop" onclick="navToggle()"></span>
+          <span class="material-icons icon-menu" onclick="navToggle()"
+            >menu</span>
+    </div>
+  </header>
+  <div class="deal">
+    <div class="deal-item cake">
+      <div class="deal-item__img">
+        <img src="assets/cake.png" alt="cake" />
+      </div>
+      <div class="deal-item__info">
+        <div class="deal-item__offer">All deserts</div>
+        <div class="deal-item__discount">20% OFF</div>
+        <div class="deal-item__desc">Deserty</div>
+      </div>
+    </div>
+    <div class="deal-item burger">
+      <div class="deal-item__img">
+        <img src="assets/burger.png" alt="cake" />
+      </div>
+      <div class="deal-item__info">
+        <div class="deal-item__offer">Big Burgers</div>
+        <div class="deal-item__discount"><span>50% OFF</span></div>
+        <div class="deal-item__desc">Fooddies</div>
+      </div>
+    </div>
+  </div>
+  <div class="category">
+    <div
+      class="category__item"
+      [class.selected]="isCategorySelected('pizza')"
+      (click)="selectCategory('pizza')"
+    >
+      <a href="/" class="category__link">
+        <img src="assets/icon/pizza.svg" alt="pizza" />
+      </a>
+      <a href="/" class="category__text">Pizza</a>
+    </div>
+    <div
+      class="category__item"
+      [class.selected]="isCategorySelected('burger')"
+      (click)="selectCategory('burger')"
+    >
+      <a href="/" class="category__link">
+        <img src="assets/icon/burger.svg" alt="burger" />
+      </a>
+      <a href="/" class="category__text">Burger</a>
+    </div>
+
+    <div
+      class="category__item"
+      [class.selected]="isCategorySelected('BBQ')"
+      (click)="selectCategory('BBQ')"
+    >
+      <a href="/" class="category__link">
+        <img src="assets/icon/meat.svg" alt="BBQ" />
+      </a>
+      <a href="/" class="category__text">BBQ</a>
+    </div>
+
+    <div
+      class="category__item"
+      [class.selected]="isCategorySelected('sushi')"
+      (click)="selectCategory('sushi')"
+    >
+      <a href="/" class="category__link">
+        <img src="assets/icon/sushi.svg" alt="sushi" />
+      </a>
+      <a href="/" class="category__text">Sushi</a>
+    </div>
+
+    <div
+      class="category__item"
+      [class.selected]="isCategorySelected('broccoli')"
+      (click)="selectCategory('broccoli')"
+    >
+      <a href="/" class="category__link">
+        <img src="assets/icon/broccoli.svg" alt="broccoli" />
+      </a>
+      <a href="/" class="category__text">Broccoli</a>
+    </div>
+
+    <div
+      class="category__item"
+      [class.selected]="isCategorySelected('desserts')"
+      (click)="selectCategory('desserts')"
+    >
+      <a href="/" class="category__link">
+        <img src="assets/icon/cake.svg" alt="Desserts" />
+      </a>
+      <a href="/" class="category__text">Desserts</a>
+    </div>
+  </div>
+
+  <div class="restaurants">
+    <div class="restaurants__title">Nearby restaurants</div>
+    <div class="restaurants-items">
+      <div class="restaurants-item">
+        <img src="assets/icon/1.png" alt />
+        <div class="restaurants-item__container">
+          <div class="restaurants-item__info">
+            <div class="restaurants-item__title">Royal Sushi House</div>
+            <a href="/" class="restaurants-item__cart"
+              ><img src="assets/icon/shopping bag.svg" alt="cart"
+            /></a>
+          </div>
+          <div class="restaurants-item__desc">
+            <img src="assets/icon/clock.svg" alt="clock" />
+            <div class="restaurants-item__time">30-40 min</div>
+            <span></span>
+            <div class="restaurants-item__sum">$32 min sum</div>
+          </div>
+          <div class="restaurants-item__pos">
+            <a class="restaurants-item__icon" href="/"> Sushi </a>
+          </div>
+        </div>
+      </div>
+      <div class="restaurants-item">
+        <img src="assets/icon/2.png" alt />
+        <div class="restaurants-item__container">
+          <div class="restaurants-item__info">
+            <div class="restaurants-item__title">Burgers & Pizza</div>
+            <a href="/" class="restaurants-item__cart"
+              >  <img src="assets/icon/two.svg" alt="cart"/>
+           </a>
+          </div>
+          <div class="restaurants-item__desc">
+            <img src="assets/icon/clock.svg" alt="clock" />
+            <div class="restaurants-item__time">40-60 min</div>
+            <span></span>
+            <div class="restaurants-item__sum">$24 min sum</div>
+          </div>
+          <div class="restaurants-item__pos">
+            <a class="restaurants-item__icon restaurants-item__burger" href="/">
+              Burger
+            </a>
+            <a class="restaurants-item__icon restaurants-item__pizza" href="/">
+              Pizza
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="restaurants-item">
+        <img src="assets/icon/3.png" alt />
+        <div class="restaurants-item__container">
+          <div class="restaurants-item__info">
+            <div class="restaurants-item__title">Ninja sushi</div>
+            <a href="/" class="restaurants-item__cart"
+              ><img src="assets/icon/shopping bag.svg" alt="cart"
+            /></a>
+          </div>
+          <div class="restaurants-item__desc">
+            <img src="assets/icon/clock.svg" alt="clock" />
+            <div class="restaurants-item__time">20-40 min</div>
+            <span></span>
+            <div class="restaurants-item__sum">$40 min sum</div>
+          </div>
+          <div class="restaurants-item__pos">
+            <a class="restaurants-item__icon" href="/"> Sushi </a>
+          </div>
+        </div>
+      </div>
+      <div class="restaurants-item">
+        <img src="assets/icon/4.png" alt />
+        <div class="restaurants-item__container">
+          <div class="restaurants-item__info">
+            <div class="restaurants-item__title">Sushi master</div>
+            <a href="/" class="restaurants-item__cart"
+              ><img src="assets/icon/shopping bag.svg" alt="cart"
+            /></a>
+          </div>
+          <div class="restaurants-item__desc">
+            <img src="assets/icon/clock.svg" alt="clock" />
+            <div class="restaurants-item__time">60-70 min</div>
+            <span></span>
+            <div class="restaurants-item__sum">$49 min sum</div>
+          </div>
+          <div class="restaurants-item__pos">
+            <a class="restaurants-item__icon" href="/"> Sushi </a>
+          </div>
+        </div>
+      </div>
+      <div class="restaurants-item">
+        <img src="assets/icon/5.png" alt />
+        <div class="restaurants-item__container">
+          <div class="restaurants-item__info">
+            <div class="restaurants-item__title">Japanese sushi</div>
+            <a href="/" class="restaurants-item__cart"
+            ><img src="assets/icon/shopping bag.svg" alt="cart"
+          /></a>
+          </div>
+          <div class="restaurants-item__desc">
+            <img src="assets/icon/clock.svg" alt="clock" />
+            <div class="restaurants-item__time">30-50 min</div>
+            <span></span>
+            <div class="restaurants-item__sum">$104 min sum</div>
+          </div>
+          <div class="restaurants-item__pos">
+            <a class="restaurants-item__icon" href="/"> Sushi </a>
+          </div>
+        </div>
+      </div>
+      <div class="restaurants-item">
+        <img src="assets/icon/6.png" alt />
+        <div class="restaurants-item__container">
+          <div class="restaurants-item__info">
+            <div class="restaurants-item__title">Kobe</div>
+            <a href="/" class="restaurants-item__cart"
+              ><img src="assets/icon/shopping bag.svg" alt="cart"
+            /></a>
+          </div>
+          <div class="restaurants-item__desc">
+            <img src="assets/icon/clock.svg" alt="clock" />
+            <div class="restaurants-item__time">20-30 min</div>
+            <span></span>
+            <div class="restaurants-item__sum">$57 min sum</div>
+          </div>
+          <div class="restaurants-item__pos">
+            <a class="restaurants-item__icon" href="/"> Sushi </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
